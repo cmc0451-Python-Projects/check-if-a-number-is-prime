@@ -1,0 +1,20 @@
+import re
+
+def prime_checker(number):
+  empty_list = []
+  divisible_amount = -1
+  for numbers in range(1,(number+1)):
+    list = str(number / numbers)
+    if (re.search('.+\.0$', list)):
+      divisible_amount += 1
+      int_list = int(float(list))
+      empty_list.insert(divisible_amount, int_list)
+      
+  if len(empty_list)  == 2:
+    print("This number is prime")
+  else:
+    print("this number is not prime")
+        
+number_chosen = int(input("what is the number? "))
+
+prime_checker(number=number_chosen)
